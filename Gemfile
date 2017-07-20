@@ -60,3 +60,8 @@ gem 'autoprefixer-rails'
 gem 'rabl'
 
 gem 'jquery-datatables-rails', '~> 3.4.0'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl'
+end
