@@ -4,6 +4,8 @@ class Vehicle < ApplicationRecord
   before_create :set_category
   
   validates :plate, presence: true, uniqueness: true
+  validates :year, presence: true
+  validates :color, presence: true
   validate :rules_plates 
 
 

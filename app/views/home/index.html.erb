@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Example Block -->
+<div class="block">
+  <!-- Example Title -->
+  <div class="block-title">
+    <h2></h2>
+    <%= link_to "Create travel", new_travel_path, :class => "btn btn-success btn-lg" %>
+  </div>
+
+  <br>
+  <!-- END Example Title -->
+
+  <table class="table data-table">
+    <thead>
+      <tr>
+        <th>Plate Vehicle</th>
+        <th>Color Vehicle</th>
+        <th>Name Passenger</th>
+        <th>Identification</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <% @travels.each do |travel| %>
+      <tr>
+        <td><%= travel.vehicle.plate %></td>
+        <td><%= travel.vehicle.color %></td>
+        <td><%= travel.passenger.full_name %></td>
+        <td><%= travel.passenger.identification %></td>         
+       
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<script>
+
+$(function(){
+	$('.data-table').DataTable({
+	});
+	
+})
+
+
+</script>
