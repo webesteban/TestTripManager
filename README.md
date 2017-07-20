@@ -20,16 +20,16 @@ Api two services:
 	POST /api/vehicle
 
 		params_example = {
-						    "vehicle":{
-						        "plate": "ABC123",
-						        "color": "#FFF000",
-						        "year": "1950"
-						    }
-						}
+		    "vehicle":{
+		        "plate": "ABC123",
+		        "color": "#FFF000",
+		        "year": "1950"
+		    }
+		}
 
 		Add new Vehicle in list
 
-		NOTE: the response of api is create with RABL 
+		NOTE: the response of api is create with [RABL](https://github.com/nesquena/rabl) 
 
 Run test in model
 	
