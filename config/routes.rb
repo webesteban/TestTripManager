@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :travels
+  resources :passengers
+  resources :vehicles
   root 'home#index'
 
   devise_for :users

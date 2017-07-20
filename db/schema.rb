@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719224327) do
+ActiveRecord::Schema.define(version: 20170720051913) do
+
+  create_table "passengers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "identification"
+    t.boolean  "enabled"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "travels", force: :cascade do |t|
+    t.integer  "vehicle_id"
+    t.integer  "passenger_id"
+    t.boolean  "enabled"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["passenger_id"], name: "index_travels_on_passenger_id"
+    t.index ["vehicle_id"], name: "index_travels_on_vehicle_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -29,6 +48,16 @@ ActiveRecord::Schema.define(version: 20170719224327) do
     t.boolean  "enabled"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string   "plate"
+    t.string   "color"
+    t.integer  "year"
+    t.integer  "category"
+    t.boolean  "enabled"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
