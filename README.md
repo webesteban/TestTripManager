@@ -1,24 +1,40 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Example basi Rails project
 
-* Ruby version
+Rails: 5
+Ruby: 2.3
 
-* System dependencies
+Login seed:
 
-* Configuration
+	username: 	admin@trip.com
+	password: 	qwer1234
 
-* Database creation
+Api two services:
 
-* Database initialization
+	GET /api/vehicles
+		Return all vehicles
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+	POST /api/vehicle
 
-* Deployment instructions
+		params_example = {
+						    "vehicle":{
+						        "plate": "ABC123",
+						        "color": "#FFF000",
+						        "year": "1950"
+						    }
+						}
 
-* ...
+		Add new Vehicle in list
+
+		NOTE: the response of api is create with RABL 
+
+Run test in model
+	
+	bundle exec rspec
+	Executes 4 tests to the vehicle model, of the business rules
+
+
+
